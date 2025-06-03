@@ -1,3 +1,5 @@
+import { getNotes, addNote, updateNote, deleteNote } from "./note-client.js";
+
 const updateNotesTable = (noteId, searchTitle) => {
   const table = document.getElementById("notes-table");
 
@@ -109,3 +111,5 @@ const saveEditNote = () => {
       });
   }
 };
+
+window.updateNotesTable = updateNotesTable;

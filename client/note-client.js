@@ -1,6 +1,6 @@
 import baseUrl from "./config.js";
 
-const addNote = async (noteData) => {
+export const addNote = async (noteData) => {
   const response = await fetch(`${baseUrl}/notes`, {
     method: "POST",
     headers: {
@@ -12,7 +12,7 @@ const addNote = async (noteData) => {
   return response;
 };
 
-const updateNote = async (noteData) => {
+export const updateNote = async (noteData) => {
   const response = await fetch(`${baseUrl}/notes/`, {
     method: "PUT",
     headers: {
@@ -24,7 +24,7 @@ const updateNote = async (noteData) => {
   return response;
 };
 
-const deleteNote = async (noteId) => {
+export const deleteNote = async (noteId) => {
   const response = await fetch(`${baseUrl}/notes/${noteId}`, {
     method: "DELETE",
   });
@@ -32,13 +32,13 @@ const deleteNote = async (noteId) => {
   return response;
 };
 
-const getNoteById = async (noteId) => {
+export const getNoteById = async (noteId) => {
   const response = await fetch(`${baseUrl}/notes/${noteId}`);
 
   return response.json();
 };
 
-const getNotes = async (noteTitle) => {
+export const getNotes = async (noteTitle) => {
   let url = `${baseUrl}/notes`;
   if (noteTitle) url += `?title=${noteTitle}`;
 
